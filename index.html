@@ -1,663 +1,350 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Red_thz - Software Developer & Designer based in Austria. Specializing in Web Development, Discord Automation, and Backend Systems.">
-    <title>Red_thz | Software Developer & Designer</title>
-    <style>
-        /* --- CSS Variables & Reset --- */
-        :root {
-            --bg-color: #0f172a;
-            --text-primary: #f1f5f9;
-            --text-secondary: #94a3b8;
-            --accent: #38bdf8;
-            --accent-hover: #0ea5e9;
-            --card-bg: rgba(30, 41, 59, 0.6);
-            --glass-border: rgba(255, 255, 255, 0.08);
-            --glow: 0 0 20px rgba(56, 189, 248, 0.2);
-            --font-main: 'Inter', system-ui, -apple-system, sans-serif;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Portfolio of Red_thz - Software Developer & Designer based in Austria.">
+<title>Red_thz | Software Developer</title>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: var(--font-main);
-            scroll-behavior: smooth;
-        }
+<style>
+:root{
+  --bg:#0f172a;
+  --card:#1e293b;
+  --text:#f1f5f9;
+  --muted:#94a3b8;
+  --accent:#38bdf8;
+}
 
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-primary);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, Helvetica, sans-serif;
+}
 
-        /* --- Background Animation --- */
-        .bg-orb {
-            position: fixed;
-            border-radius: 50%;
-            filter: blur(100px);
-            z-index: -1;
-            opacity: 0.25;
-            animation: float 15s infinite alternate ease-in-out;
-        }
-        .orb-1 { width: 400px; height: 400px; background: #3b82f6; top: -100px; left: -100px; }
-        .orb-2 { width: 500px; height: 500px; background: #8b5cf6; bottom: -150px; right: -150px; animation-delay: -5s; }
+body{
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+}
 
-        @keyframes float {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(40px, 60px); }
-        }
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 8%;
+  border-bottom:1px solid rgba(255,255,255,0.05);
+  position:sticky;
+  top:0;
+  background:#0f172a;
+}
 
-        /* --- Header & Nav --- */
-        header {
-            padding: 1.5rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            backdrop-filter: blur(12px);
-            background: rgba(15, 23, 42, 0.8);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid var(--glass-border);
-        }
+header h2{
+  color:var(--accent);
+}
 
-        .logo {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            font-weight: 700;
-            color: var(--accent);
-            text-decoration: none;
-            letter-spacing: -0.5px;
-        }
-        .logo img {
-            width: 64px;
-            height: 64px;
-            object-fit: contain;
-            border-radius: 14px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            background: rgba(255, 255, 255, 0.12);
-            padding: 6px;
-            box-shadow: 0 0 22px rgba(56, 189, 248, 0.35);
-        }
-        .logo-text {
-            font-size: 1.75rem;
-        }
+nav a{
+  margin-left:20px;
+  text-decoration:none;
+  color:var(--muted);
+  font-size:14px;
+}
 
-        .nav-group {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-        }
+nav a:hover{
+  color:var(--accent);
+}
 
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: color 0.3s;
-            font-size: 0.95rem;
-        }
-        .nav-links a:hover { color: var(--accent); }
+section{
+  padding:80px 8%;
+  max-width:1200px;
+  margin:auto;
+}
 
-        .lang-switch {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--glass-border);
-            color: var(--text-primary);
-            padding: 5px 10px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 0.8rem;
-            transition: all 0.3s;
-        }
-        .lang-switch:hover { border-color: var(--accent); }
+.hero{
+  text-align:center;
+  padding-top:120px;
+  padding-bottom:120px;
+}
 
-        /* --- Hero Section --- */
-        .hero {
-            min-height: 90vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 1rem;
-        }
+.hero h1{
+  font-size:40px;
+  margin-bottom:20px;
+}
 
-        .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4.5rem);
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, #fff 0%, var(--accent) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: slideUp 0.8s ease-out;
-        }
+.hero p{
+  max-width:600px;
+  margin:auto;
+  color:var(--muted);
+  margin-bottom:30px;
+}
 
-        .hero p {
-            font-size: 1.2rem;
-            color: var(--text-secondary);
-            max-width: 700px;
-            margin-bottom: 2.5rem;
-            animation: slideUp 0.8s ease-out 0.2s backwards;
-        }
+button{
+  padding:12px 25px;
+  border:none;
+  background:var(--accent);
+  color:#000;
+  cursor:pointer;
+  border-radius:6px;
+  font-weight:bold;
+}
 
-        .btn {
-            padding: 12px 28px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            display: inline-block;
-            cursor: pointer;
-        }
+button:hover{
+  opacity:0.9;
+}
 
-        .btn-primary {
-            background: var(--accent);
-            color: #0f172a;
-            box-shadow: var(--glow);
-            animation: slideUp 0.8s ease-out 0.4s backwards;
-        }
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            background: var(--accent-hover);
-            box-shadow: 0 0 30px rgba(56, 189, 248, 0.4);
-        }
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
+}
 
-        /* --- Sections --- */
-        .section {
-            padding: 6rem 10%;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
+.card{
+  background:var(--card);
+  padding:25px;
+  border-radius:10px;
+}
 
-        .section-title {
-            font-size: 2rem;
-            margin-bottom: 3rem;
-            text-align: center;
-            position: relative;
-        }
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 3px;
-            background: var(--accent);
-            margin: 15px auto 0;
-            border-radius: 2px;
-        }
+.card h3{
+  margin-bottom:15px;
+}
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
+.card p{
+  color:var(--muted);
+  font-size:14px;
+  margin-bottom:15px;
+}
 
-        .card {
-            background: var(--card-bg);
-            border: 1px solid var(--glass-border);
-            padding: 2rem;
-            border-radius: 16px;
-            transition: transform 0.3s, border-color 0.3s;
-            backdrop-filter: blur(10px);
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent);
-        }
+.tag{
+  display:inline-block;
+  padding:5px 10px;
+  background:rgba(56,189,248,0.1);
+  color:var(--accent);
+  border-radius:20px;
+  font-size:12px;
+  margin:5px 5px 0 0;
+}
 
-        .skill-tag {
-            background: rgba(56, 189, 248, 0.1);
-            color: var(--accent);
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            display: inline-block;
-            margin: 0 6px 10px 0;
-            border: 1px solid rgba(56, 189, 248, 0.2);
-        }
+footer{
+  padding:40px 8%;
+  border-top:1px solid rgba(255,255,255,0.05);
+  font-size:13px;
+  color:var(--muted);
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+}
 
-        /* --- Footer --- */
-        footer {
-            border-top: 1px solid var(--glass-border);
-            padding: 3rem 10%;
-            background: rgba(15, 23, 42, 0.95);
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 2rem;
-        }
-        footer a { color: var(--accent); text-decoration: none; }
-        footer a:hover { text-decoration: underline; }
+footer a{
+  color:var(--accent);
+  text-decoration:none;
+}
 
-        /* --- AI Chat Widget --- */
-        .chat-widget {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            z-index: 2000;
-        }
+.chat-box{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+}
 
-        .chat-toggle {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: var(--accent);
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 4px 20px rgba(56, 189, 248, 0.4);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: transform 0.3s;
-            font-size: 1.5rem;
-            color: #0f172a;
-        }
-        .chat-toggle:hover { transform: scale(1.1) rotate(10deg); }
+.chat-window{
+  width:300px;
+  height:380px;
+  background:#1e293b;
+  border-radius:10px;
+  display:none;
+  flex-direction:column;
+  margin-bottom:10px;
+}
 
-        .chat-window {
-            position: absolute;
-            bottom: 80px;
-            right: 0;
-            width: 340px;
-            height: 480px;
-            background: #1e293b;
-            border: 1px solid var(--glass-border);
-            border-radius: 16px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-            display: none;
-            flex-direction: column;
-            overflow: hidden;
-            animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
+.chat-messages{
+  flex:1;
+  padding:10px;
+  overflow-y:auto;
+  font-size:13px;
+}
 
-        .chat-header {
-            background: #0f172a;
-            padding: 16px;
-            border-bottom: 1px solid var(--glass-border);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .bot-avatar {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            background: var(--accent);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 0.8rem;
-            color: #000;
-        }
+.msg{
+  margin-bottom:10px;
+  padding:8px 10px;
+  border-radius:8px;
+}
 
-        .chat-messages {
-            flex: 1;
-            padding: 15px;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            font-size: 0.9rem;
-        }
+.bot{
+  background:#334155;
+}
 
-        .message {
-            max-width: 85%;
-            padding: 10px 14px;
-            border-radius: 12px;
-            line-height: 1.4;
-        }
-        .bot-msg {
-            background: #334155;
-            color: #f1f5f9;
-            align-self: flex-start;
-            border-bottom-left-radius: 2px;
-        }
-        .user-msg {
-            background: var(--accent);
-            color: #0f172a;
-            align-self: flex-end;
-            border-bottom-right-radius: 2px;
-            font-weight: 600;
-        }
+.user{
+  background:var(--accent);
+  color:#000;
+  text-align:right;
+}
 
-        .chat-input-area {
-            padding: 15px;
-            background: #0f172a;
-            border-top: 1px solid var(--glass-border);
-            display: flex;
-            gap: 8px;
-        }
+.chat-input{
+  display:flex;
+  border-top:1px solid rgba(255,255,255,0.05);
+}
 
-        .chat-input {
-            flex: 1;
-            background: #1e293b;
-            border: 1px solid var(--glass-border);
-            color: #fff;
-            padding: 10px 14px;
-            border-radius: 25px;
-            outline: none;
-            font-size: 0.9rem;
-        }
-        .chat-input:focus { border-color: var(--accent); }
-        
-        .chat-send {
-            background: transparent;
-            border: none;
-            color: var(--accent);
-            cursor: pointer;
-            padding: 0 10px;
-            font-weight: 600;
-        }
+.chat-input input{
+  flex:1;
+  border:none;
+  padding:8px;
+  background:#0f172a;
+  color:white;
+}
 
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.95); }
-            to { opacity: 1; transform: scale(1); }
-        }
-
-        /* Mobile */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .nav-links { display: none; } /* Simplified for mobile */
-            .chat-window { width: 300px; right: -10px; }
-        }
-    </style>
+.chat-input button{
+  background:var(--accent);
+  border:none;
+  padding:8px 12px;
+}
+</style>
 </head>
+
 <body>
 
-    <div class="bg-orb orb-1"></div>
-    <div class="bg-orb orb-2"></div>
+<header>
+  <h2>Red_thz</h2>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="https://github.com/revsync09-dot" target="_blank">GitHub</a>
+  </nav>
+</header>
 
-    <header>
-        <a href="#" class="logo">
-            <img src="assets/logo.png" alt="Red_thz Logo (PNG)" onerror="this.remove()">
-            <span class="logo-text">Red_thz</span>
-        </a>
-        <div class="nav-group">
-            <nav class="nav-links">
-                <a href="#about" data-key="nav_about">About</a>
-                <a href="#expertise" data-key="nav_skills">Skills</a>
-                <a href="#projects" data-key="nav_projects">Projects</a>
-                <a href="https://github.com/revsync09-dot" target="_blank">GitHub</a>
-            </nav>
-            <button class="lang-switch" onclick="toggleLanguage()">DE / EN</button>
-        </div>
-    </header>
+<section class="hero">
+  <h1>Hello, I'm Red_thz</h1>
+  <p>
+    Creative Software Developer & Designer from Austria.
+    Building efficient, secure, and user-friendly solutions.
+  </p>
+  <button onclick="toggleChat()">Ask AI Bot</button>
+</section>
 
-    <section class="hero">
-        <h1 data-key="hero_title">Hello, I'm Red_thz</h1>
-        <p data-key="hero_subtitle">Creative Software Developer & Designer from Austria.<br>Building efficient, secure, and user-friendly solutions.</p>
-        <div style="display: flex; gap: 15px;">
-            <a href="#expertise" class="btn btn-primary" data-key="btn_explore">Explore My Work</a>
-            <button class="btn" style="background: rgba(255,255,255,0.1);" onclick="toggleChat()" data-key="btn_chat">Ask AI Bot</button>
-        </div>
-    </section>
+<section id="about">
+  <h2>About Me</h2>
+  <div class="card">
+    <p>
+      I am a passionate Software Developer specializing in web and backend development.
+      I have gained experience building reliable, scalable, and performance-focused systems,
+      including work connected with companies like <strong>Siemens AG</strong>.
+    </p>
+    <p>
+      My goal is always to build efficient, secure, and user-friendly solutions that provide real value.
+      If you're looking for a developer who combines technical precision with creative problem-solving,
+      I’m ready to build something great.
+    </p>
+  </div>
+</section>
 
-    <section id="about" class="section">
-        <h2 class="section-title" data-key="about_title">About Me</h2>
-        <div class="card">
-            <p style="margin-bottom: 1rem; color: var(--text-secondary);" data-key="about_text1">
-                I am a passionate Software Developer specializing in web and backend development. 
-                I have gained experience building reliable, scalable, and performance-focused systems, including work connected with companies like <strong>Siemens AG</strong>.
-            </p>
-            <p style="color: var(--text-secondary);" data-key="about_text2">
-                My goal is always to build efficient, secure, and user-friendly solutions that provide real value. 
-                If you're looking for a developer who combines technical precision with creative problem-solving, I’m ready to build something great.
-            </p>
-        </div>
-    </section>
+<section id="skills">
+  <h2>My Expertise</h2>
 
-    <section id="expertise" class="section">
-        <h2 class="section-title" data-key="skills_title">My Expertise</h2>
-        <div class="grid">
-            <!-- Web Dev -->
-            <div class="card">
-                <h3 data-key="card_web_title">Web Development</h3>
-                <p style="margin: 1rem 0; font-size: 0.9rem; color: var(--text-secondary);" data-key="card_web_desc">
-                    Designing modern web applications and backend infrastructures with a strong focus on clean architecture and UI/UX.
-                </p>
-                <div>
-                    <span class="skill-tag">HTML/CSS/JS</span>
-                    <span class="skill-tag">React</span>
-                    <span class="skill-tag">Clean Architecture</span>
-                    <span class="skill-tag">UI/UX Design</span>
-                </div>
-            </div>
+  <div class="cards">
 
-            <!-- Discord & Automation -->
-            <div class="card">
-                <h3 data-key="card_discord_title">Discord & Automation</h3>
-                <p style="margin: 1rem 0; font-size: 0.9rem; color: var(--text-secondary);" data-key="card_discord_desc">
-                    Highly experienced in Discord bot development, modmail systems, ranking engines, and custom automation.
-                </p>
-                <div>
-                    <span class="skill-tag">Discord API</span>
-                    <span class="skill-tag">Ranking Systems</span>
-                    <span class="skill-tag">Crypto Alerts</span>
-                    <span class="skill-tag">Vouch Systems</span>
-                </div>
-            </div>
-
-            <!-- Backend -->
-            <div class="card">
-                <h3 data-key="card_backend_title">Backend Systems</h3>
-                <p style="margin: 1rem 0; font-size: 0.9rem; color: var(--text-secondary);" data-key="card_backend_desc">
-                    Creating scalable backend solutions, dashboard integrations, and API-based automation systems.
-                </p>
-                <div>
-                    <span class="skill-tag">API Integration</span>
-                    <span class="skill-tag">Security</span>
-                    <span class="skill-tag">Scalability</span>
-                    <span class="skill-tag">Dashboards</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div style="margin-bottom: 1rem;">
-            <p>© 2026 Red_thz. All rights reserved.</p>
-            <p style="font-size: 0.8rem; margin-top: 5px;">Based in Austria 🇦🇹</p>
-        </div>
-        <div style="display: flex; gap: 2rem;">
-            <a href="https://github.com/revsync09-dot" target="_blank">GitHub Profile</a>
-            <a href="#" onclick="alert('Datenschutzerklärung Platzhalter: Hier würden Ihre rechtlichen Texte stehen.')" data-key="footer_privacy">Privacy Policy</a>
-            <a href="#" onclick="alert('Impressum Platzhalter')" data-key="footer_imprint">Imprint</a>
-        </div>
-    </footer>
-
-    <!-- Chat Bot Widget -->
-    <div class="chat-widget">
-        <button class="chat-toggle" onclick="toggleChat()" aria-label="Open AI Chat">
-            <span>🤖</span>
-        </button>
-
-        <div class="chat-window" id="chatWindow">
-            <div class="chat-header">
-                <div class="bot-avatar">AI</div>
-                <div>
-                    <div style="font-weight: bold; font-size: 0.95rem;">Red_AI Assistant</div>
-                    <div style="font-size: 0.75rem; color: #94a3b8;" id="botStatus">Online</div>
-                </div>
-                <div style="margin-left: auto; cursor: pointer;" onclick="toggleChat()">✕</div>
-            </div>
-            <div class="chat-messages" id="chatMessages">
-                <!-- Initial message injected by JS -->
-            </div>
-            <div class="chat-input-area">
-                <input type="text" class="chat-input" id="userInput" placeholder="Ask a question..." onkeypress="handleKeyPress(event)">
-                <button class="chat-send" onclick="sendMessage()">➤</button>
-            </div>
-        </div>
+    <div class="card">
+      <h3>Web Development</h3>
+      <p>Designing modern web applications and backend infrastructures with strong focus on clean architecture and UI/UX.</p>
+      <span class="tag">HTML/CSS/JS</span>
+      <span class="tag">React</span>
+      <span class="tag">Clean Architecture</span>
+      <span class="tag">UI/UX</span>
     </div>
 
-    <script>
-        // --- Translations ---
-        const translations = {
-            en: {
-                nav_about: "About",
-                nav_skills: "Skills",
-                nav_projects: "Projects",
-                hero_title: "Hello, I'm Red_thz",
-                hero_subtitle: "Creative Software Developer & Designer from Austria.<br>Building efficient, secure, and user-friendly solutions.",
-                btn_explore: "Explore My Work",
-                btn_chat: "Ask AI Bot",
-                about_title: "About Me",
-                about_text1: "I am a passionate Software Developer specializing in web and backend development. I have gained experience building reliable, scalable, and performance-focused systems, including work connected with companies like <strong>Siemens AG</strong>.",
-                about_text2: "My goal is always to build efficient, secure, and user-friendly solutions that provide real value. If you're looking for a developer who combines technical precision with creative problem-solving, I’m ready to build something great.",
-                skills_title: "My Expertise",
-                card_web_title: "Web Development",
-                card_web_desc: "Designing modern web applications and backend infrastructures with a strong focus on clean architecture and UI/UX.",
-                card_discord_title: "Discord & Automation",
-                card_discord_desc: "Highly experienced in Discord bot development, modmail systems, ranking engines, and custom automation.",
-                card_backend_title: "Backend Systems",
-                card_backend_desc: "Creating scalable backend solutions, dashboard integrations, and API-based automation systems.",
-                footer_privacy: "Privacy Policy",
-                footer_imprint: "Imprint",
-                bot_intro: "Hi! I am Red_thz's AI Assistant. Ask me about his skills, projects (Discord Bots, Web), or experience!",
-                bot_placeholder: "Ask a question..."
-            },
-            de: {
-                nav_about: "Über mich",
-                nav_skills: "Fähigkeiten",
-                nav_projects: "Projekte",
-                hero_title: "Hallo, ich bin Red_thz",
-                hero_subtitle: "Kreativer Softwareentwickler & Designer aus Österreich.<br>Ich entwickle effiziente, sichere und benutzerfreundliche Lösungen.",
-                btn_explore: "Meine Arbeit",
-                btn_chat: "Frag die KI",
-                about_title: "Über Mich",
-                about_text1: "Ich bin ein leidenschaftlicher Softwareentwickler mit Fokus auf Web- und Backend-Entwicklung. Ich habe Erfahrung im Aufbau zuverlässiger und skalierbarer Systeme gesammelt, unter anderem in Verbindung mit der <strong>Siemens AG</strong>.",
-                about_text2: "Mein Ziel ist es, effiziente und sichere Lösungen zu entwickeln, die echten Mehrwert bieten. Ich verbinde technische Präzision mit kreativer Problemlösung.",
-                skills_title: "Meine Expertise",
-                card_web_title: "Web Entwicklung",
-                card_web_desc: "Design moderner Webanwendungen und Backend-Infrastrukturen mit Fokus auf Clean Architecture und UI/UX.",
-                card_discord_title: "Discord & Automation",
-                card_discord_desc: "Große Erfahrung in Discord-Bots, Modmail-Systemen, Ranking-Engines und individueller Automatisierung.",
-                card_backend_title: "Backend Systeme",
-                card_backend_desc: "Erstellung skalierbarer Backend-Lösungen, Dashboard-Integrationen und API-basierter Automatisierung.",
-                footer_privacy: "Datenschutz",
-                footer_imprint: "Impressum",
-                bot_intro: "Hallo! Ich bin der KI-Assistent von Red_thz. Frag mich nach seinen Skills, Projekten (Discord Bots, Web) oder Erfahrung!",
-                bot_placeholder: "Stell eine Frage..."
-            }
-        };
+    <div class="card">
+      <h3>Discord & Automation</h3>
+      <p>Highly experienced in Discord bot development, modmail systems, ranking engines, and crypto alerts.</p>
+      <span class="tag">Discord API</span>
+      <span class="tag">Ranking Systems</span>
+      <span class="tag">Crypto Alerts</span>
+      <span class="tag">Vouch Systems</span>
+    </div>
 
-        let currentLang = 'en';
+    <div class="card">
+      <h3>Backend Systems</h3>
+      <p>Creating scalable backend solutions, dashboard integrations, and API-based automation systems.</p>
+      <span class="tag">API Integration</span>
+      <span class="tag">Security</span>
+      <span class="tag">Scalability</span>
+      <span class="tag">Dashboards</span>
+    </div>
 
-        function toggleLanguage() {
-            currentLang = currentLang === 'en' ? 'de' : 'en';
-            updateContent();
-            
-            // Reset Chat for new language
-            const chatMsg = document.getElementById('chatMessages');
-            chatMsg.innerHTML = '';
-            addMessage(translations[currentLang].bot_intro, 'bot-msg');
-            document.getElementById('userInput').placeholder = translations[currentLang].bot_placeholder;
-        }
+  </div>
+</section>
 
-        function updateContent() {
-            document.querySelectorAll('[data-key]').forEach(el => {
-                const key = el.getAttribute('data-key');
-                if (translations[currentLang][key]) {
-                    el.innerHTML = translations[currentLang][key];
-                }
-            });
-        }
+<footer>
+  <div>
+    © 2026 Red_thz. All rights reserved. <br>
+    Based in Austria 🇦🇹
+  </div>
+  <div>
+    <a href="https://github.com/revsync09-dot" target="_blank">GitHub Profile</a>
+  </div>
+</footer>
 
-        // --- Chat Bot Logic ---
-        function toggleChat() {
-            const chatWindow = document.getElementById('chatWindow');
-            if (chatWindow.style.display === 'flex') {
-                chatWindow.style.display = 'none';
-            } else {
-                chatWindow.style.display = 'flex';
-                document.getElementById('userInput').focus();
-                
-                // Init message if empty
-                if (document.getElementById('chatMessages').children.length === 0) {
-                    addMessage(translations[currentLang].bot_intro, 'bot-msg');
-                }
-            }
-        }
+<div class="chat-box">
+  <div class="chat-window" id="chatWindow">
+    <div class="chat-messages" id="messages"></div>
+    <div class="chat-input">
+      <input type="text" id="chatInput" placeholder="Ask something...">
+      <button onclick="sendMsg()">Send</button>
+    </div>
+  </div>
+  <button onclick="toggleChat()">🤖</button>
+</div>
 
-        function handleKeyPress(e) {
-            if (e.key === 'Enter') sendMessage();
-        }
+<script>
+function toggleChat(){
+  const win = document.getElementById("chatWindow");
+  win.style.display = win.style.display === "flex" ? "none" : "flex";
 
-        function sendMessage() {
-            const inputField = document.getElementById('userInput');
-            const text = inputField.value.trim();
-            if (!text) return;
+  if(win.style.display === "flex" && document.getElementById("messages").innerHTML === ""){
+    addMsg("Hi! I am Red_thz's AI Assistant. Ask me about his skills, Discord Bots or experience with Siemens AG.", "bot");
+  }
+}
 
-            addMessage(text, 'user-msg');
-            inputField.value = '';
+function sendMsg(){
+  const input = document.getElementById("chatInput");
+  const text = input.value.trim();
+  if(!text) return;
 
-            // Simulate "Typing..."
-            const loadingId = 'loading-' + Date.now();
-            addMessage('<span style="opacity:0.6">...</span>', 'bot-msg', loadingId);
+  addMsg(text, "user");
+  input.value = "";
 
-            setTimeout(() => {
-                const response = getBotResponse(text);
-                const loadingMsg = document.getElementById(loadingId);
-                if(loadingMsg) loadingMsg.remove();
-                addMessage(response, 'bot-msg');
-            }, 800);
-        }
+  setTimeout(()=>{
+    addMsg(getResponse(text), "bot");
+  },500);
+}
 
-        function addMessage(text, className, id = null) {
-            const messagesDiv = document.getElementById('chatMessages');
-            const msgDiv = document.createElement('div');
-            msgDiv.className = `message ${className}`;
-            msgDiv.innerHTML = text;
-            if(id) msgDiv.id = id;
-            messagesDiv.appendChild(msgDiv);
-            messagesDiv.scrollTop = messagesDiv.scrollHeight;
-        }
+function addMsg(text,type){
+  const box = document.getElementById("messages");
+  const div = document.createElement("div");
+  div.className = "msg " + type;
+  div.innerHTML = text;
+  box.appendChild(div);
+  box.scrollTop = box.scrollHeight;
+}
 
-        // --- Simple "AI" Logic ---
-        function getBotResponse(input) {
-            const text = input.toLowerCase();
-            const lang = currentLang;
+function getResponse(text){
+  text = text.toLowerCase();
 
-            // Keywords matching
-            const isGreeting = text.match(/hallo|hey|hi|hello/);
-            const isWho = text.match(/wer|who|name/);
-            const isSkills = text.match(/skill|fähig|stack|code|program|web|backend/);
-            const isDiscord = text.match(/discord|bot|modmail|ranking|crypto/);
-            const isContact = text.match(/kontakt|contact|mail|email|reach/);
-            const isGithub = text.match(/git|repo|project|projekt/);
-            const isSiemens = text.match(/siemens|experience|erfahrung|job|work/);
+  if(text.includes("discord")){
+    return "Red_thz built advanced Discord Bots with ranking systems, vouch systems, modmail and crypto alerts.";
+  }
 
-            if (lang === 'de') {
-                if (isGreeting) return "Hallo! Wie kann ich helfen? Frag mich nach Red_thz's Skills oder Projekten.";
-                if (isWho) return "Ich bin der Assistent von Red_thz, einem Software Developer & Designer aus Österreich.";
-                if (isSkills) return "Er ist Experte in HTML/CSS, JS, React, Backend-Systemen, Clean Architecture und UI/UX Design.";
-                if (isDiscord) return "Er hat komplexe Discord-Systeme gebaut: Ranking, Vouch-Systeme, Modmail, Crypto-Alerts und Dashboard-Integrationen.";
-                if (isSiemens) return "Er hat Erfahrung mit Systemen im Umfeld der Siemens AG gesammelt und dabei Fokus auf Skalierbarkeit gelegt.";
-                if (isGithub) return "Du findest seine Projekte auf GitHub: <a href='https://github.com/revsync09-dot' target='_blank' style='color:#38bdf8'>github.com/revsync09-dot</a>";
-                if (isContact) return "Am besten erreichst du ihn über GitHub oder Discord.";
-                return "Das weiß ich leider nicht genau. Aber Red_thz ist Experte für Web & Automation. Schau auf sein GitHub!";
-            } else {
-                if (isGreeting) return "Hello! How can I help? Ask me about Red_thz's skills or projects.";
-                if (isWho) return "I am the assistant of Red_thz, a Software Developer & Designer based in Austria.";
-                if (isSkills) return "He is an expert in HTML/CSS, JS, React, Backend Systems, Clean Architecture, and UI/UX Design.";
-                if (isDiscord) return "He built complex Discord systems: Ranking, Vouch systems, Modmail, Crypto Alerts, and Dashboard integrations.";
-                if (isSiemens) return "He gained experience working on systems connected to Siemens AG, focusing on scalability and reliability.";
-                if (isGithub) return "You can find his projects on GitHub: <a href='https://github.com/revsync09-dot' target='_blank' style='color:#38bdf8'>github.com/revsync09-dot</a>";
-                if (isContact) return "The best way to reach him is via GitHub or Discord.";
-                return "I'm not sure about that. But Red_thz is an expert in Web & Automation. Check out his GitHub!";
-            }
-        }
+  if(text.includes("siemens")){
+    return "He gained experience connected with systems related to Siemens AG focusing on scalability and performance.";
+  }
 
-        // Initialize Language
-        updateContent();
-    </script>
+  if(text.includes("skill")){
+    return "He works with HTML, CSS, JavaScript, React and backend systems.";
+  }
+
+  if(text.includes("github")){
+    return "You can check his GitHub here: <a href='https://github.com/revsync09-dot' target='_blank' style='color:#38bdf8'>github.com/revsync09-dot</a>";
+  }
+
+  return "Ask me about his skills, Discord Bots, backend systems or Siemens experience.";
+}
+</script>
+
 </body>
 </html>
