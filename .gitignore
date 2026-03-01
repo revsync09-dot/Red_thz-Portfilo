@@ -1,0 +1,12 @@
+﻿# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Node (falls du später Tools installierst)
+node_modules/
+
+# Netlify local state
+.netlify/

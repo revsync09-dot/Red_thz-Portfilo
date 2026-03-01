@@ -1,0 +1,541 @@
+﻿<!DOCTYPE html>
+<html lang="de" data-lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Red_thz | Software, Web & Bot Developer</title>
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="loader-container">
+      <div class="loader-cube">
+        <div class="cube-face front"></div>
+        <div class="cube-face back"></div>
+        <div class="cube-face right"></div>
+        <div class="cube-face left"></div>
+        <div class="cube-face top"></div>
+        <div class="cube-face bottom"></div>
+      </div>
+      <p class="loader-text">Red_thz</p>
+      <div class="loader-bar"><div class="loader-progress"></div></div>
+    </div>
+  </div>
+
+  <!-- Cursor -->
+  <div class="custom-cursor"></div>
+  <div class="cursor-follower"></div>
+
+  <!-- Particle Canvas -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">
+        <img src="assets/logo.png" alt="Red_thz Logo" class="brand-logo" />
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero" data-de="Start" data-en="Home">Start</a></li>
+        <li><a href="#about" data-de="Ãœber mich" data-en="About">Ãœber mich</a></li>
+        <li><a href="#skills" data-de="Skills" data-en="Skills">Skills</a></li>
+        <li><a href="#projects" data-de="Projekte" data-en="Projects">Projekte</a></li>
+        <li><a href="#bots" data-de="Bots" data-en="Bots">Bots</a></li>
+        <li><a href="#ai-chat" data-de="KI Chat" data-en="AI Chat">KI Chat</a></li>
+        <li><a href="#contact" data-de="Kontakt" data-en="Contact">Kontakt</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button id="langToggle" class="lang-btn" title="Switch Language">
+          <span class="lang-flag">ðŸ‡©ðŸ‡ª</span>
+          <span class="lang-label">DE</span>
+        </button>
+        <button id="themeToggle" class="theme-btn" title="Toggle Theme">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ HERO SECTION ============ -->
+  <section id="hero">
+    <div class="hero-bg-3d">
+      <canvas id="hero-3d-canvas"></canvas>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge scroll-reveal">
+        <span class="badge-dot"></span>
+        <span data-de="VerfÃ¼gbar fÃ¼r Projekte" data-en="Available for Projects">VerfÃ¼gbar fÃ¼r Projekte</span>
+      </div>
+      <h1 class="hero-title scroll-reveal">
+        <span class="hero-greeting" data-de="Hallo, ich bin" data-en="Hi, I'm">Hallo, ich bin</span>
+        <span class="hero-name glitch" data-text="Red_thz">Red_thz</span>
+      </h1>
+      <div class="hero-typewriter scroll-reveal">
+        <span class="typewriter-prefix" data-de="Ich bin ein " data-en="I am a ">Ich bin ein </span>
+        <span class="typewriter-text" id="typewriter"></span>
+        <span class="typewriter-cursor">|</span>
+      </div>
+      <p class="hero-description scroll-reveal" data-de="Software, Web & Bot Developer â€“ spezialisiert auf JavaScript, Discord Bots und Supabase. Ich erschaffe digitale Erlebnisse, die begeistern." data-en="Software, Web & Bot Developer â€“ specialized in JavaScript, Discord Bots and Supabase. I create digital experiences that inspire.">
+        Software, Web & Bot Developer â€“ spezialisiert auf JavaScript, Discord Bots und Supabase. Ich erschaffe digitale Erlebnisse, die begeistern.
+      </p>
+      <div class="hero-cta scroll-reveal">
+        <a href="#projects" class="btn btn-primary">
+          <span data-de="Meine Arbeit" data-en="My Work">Meine Arbeit</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+        <a href="#contact" class="btn btn-outline">
+          <span data-de="Kontakt" data-en="Contact">Kontakt</span>
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+      <div class="hero-stats scroll-reveal">
+        <div class="stat-item">
+          <span class="stat-number" data-count="4">0</span>
+          <span class="stat-label" data-de="Custom Bots" data-en="Custom Bots">Custom Bots</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-count="9600">0</span><span class="stat-plus">+</span>
+          <span class="stat-label" data-de="Server Mitglieder" data-en="Server Members">Server Mitglieder</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-count="100">0</span><span class="stat-plus">%</span>
+          <span class="stat-label" data-de="Leidenschaft" data-en="Passion">Leidenschaft</span>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="mouse">
+        <div class="mouse-wheel"></div>
+      </div>
+      <span data-de="Scroll runter" data-en="Scroll down">Scroll runter</span>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT SECTION ============ -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header scroll-reveal">
+        <span class="section-tag" data-de="Ãœber mich" data-en="About Me">Ãœber mich</span>
+        <h2 class="section-title" data-de="Wer ist Red_thz?" data-en="Who is Red_thz?">Wer ist <span class="highlight">Red_thz</span>?</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-image scroll-reveal">
+          <div class="image-frame">
+            <div class="image-placeholder">
+              <div class="avatar-3d">
+                <span class="avatar-letter">R</span>
+              </div>
+            </div>
+            <div class="image-border"></div>
+            <div class="image-glow"></div>
+          </div>
+          <div class="experience-badge">
+            <span class="exp-icon"><i class="fas fa-code"></i></span>
+            <div>
+              <span class="exp-title" data-de="Erfahrung" data-en="Experience">Erfahrung</span>
+              <span class="exp-desc" data-de="Software & Bot Dev" data-en="Software & Bot Dev">Software & Bot Dev</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-content scroll-reveal">
+          <p class="about-text" data-de="Ich bin Red_thz, ein leidenschaftlicher Software, Web und Bot Developer. Meine Expertise liegt in JavaScript und der Arbeit mit Supabase als Datenbank-LÃ¶sung. Ich erstelle leistungsstarke Custom Discord Bots fÃ¼r groÃŸe Communities und entwickle moderne Webanwendungen mit atemberaubenden Animationen." data-en="I'm Red_thz, a passionate Software, Web and Bot Developer. My expertise lies in JavaScript and working with Supabase as a database solution. I create powerful Custom Discord Bots for large communities and develop modern web applications with stunning animations.">
+            Ich bin Red_thz, ein leidenschaftlicher Software, Web und Bot Developer. Meine Expertise liegt in JavaScript und der Arbeit mit Supabase als Datenbank-LÃ¶sung. Ich erstelle leistungsstarke Custom Discord Bots fÃ¼r groÃŸe Communities und entwickle moderne Webanwendungen mit atemberaubenden Animationen.
+          </p>
+          <p class="about-text" data-de="Meine Custom Bots laufen auf Servern mit insgesamt Ã¼ber 9.600 Mitgliedern. Jeder Bot wird individuell auf die BedÃ¼rfnisse der Community zugeschnitten und bietet einzigartige Features." data-en="My custom bots run on servers with a total of over 9,600 members. Each bot is individually tailored to the community's needs and offers unique features.">
+            Meine Custom Bots laufen auf Servern mit insgesamt Ã¼ber 9.600 Mitgliedern. Jeder Bot wird individuell auf die BedÃ¼rfnisse der Community zugeschnitten und bietet einzigartige Features.
+          </p>
+          <div class="about-info-grid">
+            <div class="info-item">
+              <i class="fas fa-user"></i>
+              <div>
+                <span class="info-label">Name</span>
+                <span class="info-value">Red_thz</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-code"></i>
+              <div>
+                <span class="info-label" data-de="Sprache" data-en="Language">Sprache</span>
+                <span class="info-value">JavaScript</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-database"></i>
+              <div>
+                <span class="info-label">Database</span>
+                <span class="info-value">Supabase</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-robot"></i>
+              <div>
+                <span class="info-label" data-de="SpezialitÃ¤t" data-en="Specialty">SpezialitÃ¤t</span>
+                <span class="info-value" data-de="Discord Bots" data-en="Discord Bots">Discord Bots</span>
+              </div>
+            </div>
+          </div>
+          <a href="#bots" class="btn btn-primary">
+            <span data-de="Meine Bots ansehen" data-en="View My Bots">Meine Bots ansehen</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS SECTION ============ -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-header scroll-reveal">
+        <span class="section-tag" data-de="FÃ¤higkeiten" data-en="Abilities">FÃ¤higkeiten</span>
+        <h2 class="section-title" data-de="Meine Skills" data-en="My Skills">Meine <span class="highlight">Skills</span></h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card scroll-reveal" data-tilt>
+          <div class="skill-icon"><i class="fab fa-js-square"></i></div>
+          <h3>JavaScript</h3>
+          <div class="skill-bar"><div class="skill-fill" data-width="68"></div></div>
+          <span class="skill-percent">68%</span>
+        </div>
+        <div class="skill-card scroll-reveal" data-tilt>
+          <div class="skill-icon"><i class="fab fa-html5"></i></div>
+          <h3>HTML5</h3>
+          <div class="skill-bar"><div class="skill-fill" data-width="58"></div></div>
+          <span class="skill-percent">58%</span>
+        </div>
+        <div class="skill-card scroll-reveal" data-tilt>
+          <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
+          <h3>CSS3</h3>
+          <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+          <span class="skill-percent">80%</span>
+        </div>
+        <div class="skill-card scroll-reveal" data-tilt>
+          <div class="skill-icon"><i class="fab fa-node-js"></i></div>
+          <h3>Node.js</h3>
+          <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+          <span class="skill-percent">75%</span>
+        </div>
+        <div class="skill-card scroll-reveal" data-tilt>
+          <div class="skill-icon"><i class="fas fa-database"></i></div>
+          <h3>Supabase</h3>
+          <div class="skill-bar"><div class="skill-fill" data-width="56"></div></div>
+          <span class="skill-percent">56%</span>
+        </div>
+        <div class="skill-card scroll-reveal" data-tilt>
+          <div class="skill-icon"><i class="fab fa-discord"></i></div>
+          <h3>Discord.js</h3>
+          <div class="skill-bar"><div class="skill-fill" data-width="84"></div></div>
+          <span class="skill-percent">84%</span>
+        </div>
+        <div class="skill-card scroll-reveal" data-tilt>
+          <div class="skill-icon"><i class="fab fa-git-alt"></i></div>
+          <h3>Git</h3>
+          <div class="skill-bar"><div class="skill-fill" data-width="50"></div></div>
+          <span class="skill-percent">50%</span>
+        </div>
+        <div class="skill-card scroll-reveal" data-tilt>
+          <div class="skill-icon"><i class="fas fa-brain"></i></div>
+          <h3 data-de="KI Integration" data-en="AI Integration">KI Integration</h3>
+          <div class="skill-bar"><div class="skill-fill" data-width="30"></div></div>
+          <span class="skill-percent">30%</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="projects">
+    <div class="container">
+      <div class="section-header scroll-reveal">
+        <span class="section-tag" data-de="Portfolio" data-en="Portfolio">Portfolio</span>
+        <h2 class="section-title" data-de="Meine Projekte" data-en="My Projects">Meine <span class="highlight">Projekte</span></h2>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card scroll-reveal" data-tilt>
+          <div class="project-image">
+            <div class="project-placeholder"><i class="fas fa-globe"></i></div>
+            <div class="project-overlay">
+              <span data-de="Projekt ansehen" data-en="View Project">Projekt ansehen</span>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-tags">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            </div>
+            <h3 data-de="Portfolio Website" data-en="Portfolio Website">Portfolio Website</h3>
+            <p data-de="Moderne Portfolio-Website mit 3D-Animationen, KI-Chat und zweisprachiger UnterstÃ¼tzung." data-en="Modern portfolio website with 3D animations, AI chat and bilingual support.">Moderne Portfolio-Website mit 3D-Animationen, KI-Chat und zweisprachiger UnterstÃ¼tzung.</p>
+          </div>
+        </div>
+        <div class="project-card scroll-reveal" data-tilt>
+          <div class="project-image">
+            <div class="project-placeholder"><i class="fab fa-discord"></i></div>
+            <div class="project-overlay">
+              <span data-de="Projekt ansehen" data-en="View Project">Projekt ansehen</span>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-tags">
+              <span>Node.js</span><span>Discord.js</span><span>Supabase</span>
+            </div>
+            <h3 data-de="Custom Discord Bots" data-en="Custom Discord Bots">Custom Discord Bots</h3>
+            <p data-de="Individuelle Bots fÃ¼r Server mit Ã¼ber 9.600 Mitgliedern insgesamt." data-en="Custom bots for servers with over 9,600 members total.">Individuelle Bots fÃ¼r Server mit Ã¼ber 9.600 Mitgliedern insgesamt.</p>
+          </div>
+        </div>
+        <div class="project-card scroll-reveal" data-tilt>
+          <div class="project-image">
+            <div class="project-placeholder"><i class="fas fa-robot"></i></div>
+            <div class="project-overlay">
+              <span data-de="Projekt ansehen" data-en="View Project">Projekt ansehen</span>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-tags">
+              <span>JavaScript</span><span>API</span><span>AI</span>
+            </div>
+            <h3 data-de="KI Bot System" data-en="AI Bot System">KI Bot System</h3>
+            <p data-de="Intelligentes Bot-System mit KI-gestÃ¼tzten Antworten und Automatisierung." data-en="Intelligent bot system with AI-powered responses and automation.">Intelligentes Bot-System mit KI-gestÃ¼tzten Antworten und Automatisierung.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BOTS / SERVERS SECTION ============ -->
+  <section id="bots">
+    <div class="container">
+      <div class="section-header scroll-reveal">
+        <span class="section-tag" data-de="Discord Bots" data-en="Discord Bots">Discord Bots</span>
+        <h2 class="section-title" data-de="Meine Custom Bots" data-en="My Custom Bots">Meine <span class="highlight">Custom Bots</span></h2>
+        <p class="section-subtitle" data-de="Server, fÃ¼r die ich bereits individuelle Bots erstellt habe" data-en="Servers I've already created custom bots for">Server, fÃ¼r die ich bereits individuelle Bots erstellt habe</p>
+      </div>
+      <div class="bots-grid">
+        <!-- Mohgs -->
+        <div class="bot-card scroll-reveal" data-tilt>
+          <div class="bot-header">
+            <div class="bot-avatar mohgs-gradient">M</div>
+            <div class="bot-status online"></div>
+          </div>
+          <h3>Mohgs</h3>
+          <div class="bot-members">
+            <i class="fas fa-users"></i>
+            <span class="member-count" data-count="3100">0</span>
+            <span data-de="Mitglieder" data-en="Members">Mitglieder</span>
+          </div>
+          <div class="bot-features">
+            <span data-de="Custom Bot" data-en="Custom Bot">Custom Bot</span>
+            <span>Moderation</span>
+            <span data-de="Automatisierung" data-en="Automation">Automatisierung</span>
+          </div>
+          <a href="https://discord.gg/22WEt24NVM" target="_blank" class="btn btn-discord">
+            <i class="fab fa-discord"></i>
+            <span data-de="Server beitreten" data-en="Join Server">Server beitreten</span>
+          </a>
+        </div>
+        <!-- Hyperions -->
+        <div class="bot-card scroll-reveal" data-tilt>
+          <div class="bot-header">
+            <div class="bot-avatar hyperions-gradient">H</div>
+            <div class="bot-status online"></div>
+          </div>
+          <h3>Hyperions</h3>
+          <div class="bot-members">
+            <i class="fas fa-users"></i>
+            <span class="member-count" data-count="2800">0</span>
+            <span data-de="Mitglieder" data-en="Members">Mitglieder</span>
+          </div>
+          <div class="bot-features">
+            <span data-de="Custom Bot" data-en="Custom Bot">Custom Bot</span>
+            <span>Leveling</span>
+            <span data-de="Verwaltung" data-en="Management">Verwaltung</span>
+          </div>
+          <a href="https://discord.gg/KVM5wmBQzg" target="_blank" class="btn btn-discord">
+            <i class="fab fa-discord"></i>
+            <span data-de="Server beitreten" data-en="Join Server">Server beitreten</span>
+          </a>
+        </div>
+        <!-- Lucent -->
+        <div class="bot-card scroll-reveal" data-tilt>
+          <div class="bot-header">
+            <div class="bot-avatar lucent-gradient">L</div>
+            <div class="bot-status online"></div>
+          </div>
+          <h3>Lucent</h3>
+          <div class="bot-members">
+            <i class="fas fa-users"></i>
+            <span class="member-count" data-count="2700">0</span>
+            <span data-de="Mitglieder" data-en="Members">Mitglieder</span>
+          </div>
+          <div class="bot-features">
+            <span data-de="Custom Bot" data-en="Custom Bot">Custom Bot</span>
+            <span>Economy</span>
+            <span data-de="Spiele" data-en="Games">Spiele</span>
+          </div>
+          <a href="https://discord.gg/jtXB7kfsKt" target="_blank" class="btn btn-discord">
+            <i class="fab fa-discord"></i>
+            <span data-de="Server beitreten" data-en="Join Server">Server beitreten</span>
+          </a>
+        </div>
+        <!-- Soulflares -->
+        <div class="bot-card scroll-reveal" data-tilt>
+          <div class="bot-header">
+            <div class="bot-avatar soulflares-gradient">S</div>
+            <div class="bot-status online"></div>
+          </div>
+          <h3>Soulflares</h3>
+          <div class="bot-members">
+            <i class="fas fa-users"></i>
+            <span class="member-count" data-count="1000">0</span>
+            <span data-de="Mitglieder" data-en="Members">Mitglieder</span>
+          </div>
+          <div class="bot-features">
+            <span data-de="Custom Bot" data-en="Custom Bot">Custom Bot</span>
+            <span>Tickets</span>
+            <span data-de="Musik" data-en="Music">Musik</span>
+          </div>
+          <a href="https://discord.gg/8E2y8gQ7eb" target="_blank" class="btn btn-discord">
+            <i class="fab fa-discord"></i>
+            <span data-de="Server beitreten" data-en="Join Server">Server beitreten</span>
+          </a>
+        </div>
+      </div>
+      <div class="bots-total scroll-reveal">
+        <div class="total-card">
+          <i class="fas fa-chart-line"></i>
+          <div>
+            <span class="total-number" data-count="9600">0</span><span class="stat-plus">+</span>
+            <span class="total-label" data-de="Gesamte Server Mitglieder" data-en="Total Server Members">Gesamte Server Mitglieder</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ AI CHAT SECTION ============ -->
+  <section id="ai-chat">
+    <div class="container">
+      <div class="section-header scroll-reveal">
+        <span class="section-tag" data-de="KI Assistent" data-en="AI Assistant">KI Assistent</span>
+        <h2 class="section-title" data-de="Chat mit meiner KI" data-en="Chat with my AI">Chat mit meiner <span class="highlight">KI</span></h2>
+        <p class="section-subtitle" data-de="Frag meine KI alles Ã¼ber mich, meine Projekte und Skills!" data-en="Ask my AI anything about me, my projects and skills!">Frag meine KI alles Ã¼ber mich, meine Projekte und Skills!</p>
+      </div>
+      <div class="chat-container scroll-reveal">
+        <div class="chat-header">
+          <div class="chat-avatar">
+            <span>R</span>
+            <div class="chat-status-dot"></div>
+          </div>
+          <div class="chat-info">
+            <span class="chat-name">Red_thz AI</span>
+            <span class="chat-status" data-de="Online â€“ Bereit zu helfen" data-en="Online â€“ Ready to help">Online â€“ Bereit zu helfen</span>
+          </div>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+          <div class="message bot-message">
+            <div class="message-avatar">R</div>
+            <div class="message-content">
+              <p data-de="Hey! ðŸ‘‹ Ich bin Red_thz's KI-Assistent. Frag mich alles Ã¼ber Red_thz, seine Projekte, Skills oder Bots!" data-en="Hey! ðŸ‘‹ I'm Red_thz's AI assistant. Ask me anything about Red_thz, his projects, skills or bots!">Hey! ðŸ‘‹ Ich bin Red_thz's KI-Assistent. Frag mich alles Ã¼ber Red_thz, seine Projekte, Skills oder Bots!</p>
+            </div>
+          </div>
+        </div>
+        <div class="chat-suggestions" id="chatSuggestions">
+          <button class="suggestion-btn" data-de="Wer ist Red_thz?" data-en="Who is Red_thz?">Wer ist Red_thz?</button>
+          <button class="suggestion-btn" data-de="Welche Bots hast du erstellt?" data-en="What bots have you created?">Welche Bots hast du erstellt?</button>
+          <button class="suggestion-btn" data-de="Welche Skills hast du?" data-en="What skills do you have?">Welche Skills hast du?</button>
+          <button class="suggestion-btn" data-de="Wie kann ich dich kontaktieren?" data-en="How can I contact you?">Wie kann ich dich kontaktieren?</button>
+        </div>
+        <div class="chat-input-container">
+          <input type="text" id="chatInput" placeholder="Nachricht eingeben..." data-de-placeholder="Nachricht eingeben..." data-en-placeholder="Type a message..." />
+          <button id="chatSend" class="chat-send-btn">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT SECTION ============ -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-header scroll-reveal">
+        <span class="section-tag" data-de="Kontakt" data-en="Contact">Kontakt</span>
+        <h2 class="section-title" data-de="Lass uns zusammenarbeiten" data-en="Let's work together">Lass uns <span class="highlight">zusammenarbeiten</span></h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info scroll-reveal">
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fab fa-discord"></i></div>
+            <div>
+              <h4>Discord</h4>
+              <p>Red_thz</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-code"></i></div>
+            <div>
+              <h4 data-de="Spezialisierung" data-en="Specialization">Spezialisierung</h4>
+              <p data-de="Web & Bot Entwicklung" data-en="Web & Bot Development">Web & Bot Entwicklung</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-database"></i></div>
+            <div>
+              <h4>Tech Stack</h4>
+              <p>JavaScript, Supabase, Node.js</p>
+            </div>
+          </div>
+        </div>
+        <form class="contact-form scroll-reveal" id="contactForm">
+          <div class="form-group">
+            <input type="text" id="formName" required />
+            <label data-de="Dein Name" data-en="Your Name">Dein Name</label>
+            <span class="form-line"></span>
+          </div>
+          <div class="form-group">
+            <input type="email" id="formEmail" required />
+            <label>Email</label>
+            <span class="form-line"></span>
+          </div>
+          <div class="form-group">
+            <textarea id="formMessage" rows="4" required></textarea>
+            <label data-de="Deine Nachricht" data-en="Your Message">Deine Nachricht</label>
+            <span class="form-line"></span>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">
+            <span data-de="Nachricht senden" data-en="Send Message">Nachricht senden</span>
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="assets/logo.png" alt="Red_thz Logo" class="footer-brand-logo" />
+        </div>
+        <p class="footer-desc" data-de="Software, Web & Bot Developer" data-en="Software, Web & Bot Developer">Software, Web & Bot Developer</p>
+        <div class="footer-socials">
+          <a href="https://discord.gg/22WEt24NVM" target="_blank" title="Discord"><i class="fab fa-discord"></i></a>
+          <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+        <div class="footer-line"></div>
+        <p class="footer-copy">Â© 2026 Red_thz. <span data-de="Alle Rechte vorbehalten." data-en="All rights reserved.">Alle Rechte vorbehalten.</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
