@@ -1,16 +1,10 @@
-/* ============================================
-   RED_THZ PORTFOLIO - SCRIPT.JS
-   All animations, AI chat, 3D, language toggle
-   ============================================ */
-
-// ===== PRELOADER =====
 window.addEventListener('load', () => {
   setTimeout(() => {
     document.getElementById('preloader').classList.add('loaded');
   }, 2200);
 });
 
-// ===== CUSTOM CURSOR =====
+
 const cursor = document.querySelector('.custom-cursor');
 const follower = document.querySelector('.cursor-follower');
 
@@ -32,7 +26,7 @@ if (cursor && follower) {
   }
   animateFollower();
 
-  // Hover effects on interactive elements
+ 
   document.querySelectorAll('a, button, input, textarea, .skill-card, .project-card, .bot-card').forEach(el => {
     el.addEventListener('mouseenter', () => {
       follower.style.width = '50px';
@@ -47,7 +41,7 @@ if (cursor && follower) {
   });
 }
 
-// ===== PARTICLES BACKGROUND =====
+
 const particlesCanvas = document.getElementById('particles-canvas');
 if (particlesCanvas) {
   const pCtx = particlesCanvas.getContext('2d');
@@ -147,7 +141,7 @@ if (hero3DCanvas) {
       this.size = Math.random() * 60 + 20;
       this.speedX = (Math.random() - 0.5) * 0.3;
       this.speedY = (Math.random() - 0.5) * 0.3;
-      this.type = Math.floor(Math.random() * 3); // 0=cube, 1=triangle, 2=diamond
+      this.type = Math.floor(Math.random() * 3);
       this.opacity = Math.random() * 0.12 + 0.03;
     }
 
@@ -174,7 +168,7 @@ if (hero3DCanvas) {
       ctx3d.lineWidth = 1.5;
 
       if (this.type === 0) {
-        // Rotating cube wireframe
+      
         const cos = Math.cos(this.rotX);
         const sin = Math.sin(this.rotX);
         const cosY = Math.cos(this.rotY);
@@ -207,7 +201,7 @@ if (hero3DCanvas) {
         });
 
       } else if (this.type === 1) {
-        // Rotating triangle
+      
         ctx3d.rotate(this.rotX);
         ctx3d.beginPath();
         ctx3d.moveTo(0, -s/2);
@@ -216,7 +210,7 @@ if (hero3DCanvas) {
         ctx3d.closePath();
         ctx3d.stroke();
       } else {
-        // Rotating diamond
+  
         ctx3d.rotate(this.rotY);
         ctx3d.beginPath();
         ctx3d.moveTo(0, -s/2);
@@ -238,7 +232,7 @@ if (hero3DCanvas) {
   function animate3D() {
     ctx3d.clearRect(0, 0, w, h);
 
-    // Background gradient
+    
     const grad = ctx3d.createRadialGradient(w/2, h/2, 0, w/2, h/2, w * 0.7);
     grad.addColorStop(0, 'rgba(15, 52, 96, 0.15)');
     grad.addColorStop(0.5, 'rgba(26, 26, 46, 0.1)');
